@@ -1,5 +1,5 @@
 .user{
-    padding: 10px 0;
+     
 }
 .user-box{
    padding: 10px 0;
@@ -26,9 +26,28 @@
 }
 .user-content{
     border-top: 1px solid #eee;
+    padding: 10px 0;
 }
 .user-content-item{
     float: left;
     width: 33.33%;
     text-align: center;
+}
+
+.list-box{
+    
+}
+.list-item{
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+}
+.list-last-child{
+    
+    border:none;
+}
+
+.list-icon{
+    width:20px;
+    height: 20px;
+    margin-right: 5px;
 }
