@@ -1,0 +1,34 @@
+.user{
+    padding: 10px 0;
+}
+.user-box{
+   padding: 10px 0;
+}
+.user-avatar{
+    float: left;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.user-name{
+    font-size: 16px;
+    line-height: 28px;
+}
+.user-signature{
+    font-size: 12px;
+    color: #999;
+}
+.gender-icon{
+    width:15px;
+    height:15px;
+    margin-left: 5px;
+}
+.user-content{
+    border-top: 1px solid #eee;
+}
+.user-content-item{
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}

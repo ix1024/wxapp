@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="block-2">
+        <view class="user">
+            <view class="user-box clearfix">
+                <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+                <view class="user-name">
+                <text class="vm">{{userName}}</text>
+                <image class="vm gender-icon" src="{{userInfo.gender?'/image/gender-male.png':'/image/gender-female.png'}}"></image>
+                </view>
+                <view class="user-signature">{{signature||'这家伙很懒，什么都没有留下'}}</view>
+            </view>
+            <view class="user-content clearfix">
+                <view class="user-content-item">Content</view>
+                <view class="user-content-item">Content</view>
+                <view class="user-content-item">Content</view>
+            </view>
+        </view>
+    </view>
+</view>

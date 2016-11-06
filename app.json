@@ -1,9 +1,9 @@
 
 {
   "pages": [
-    
+    "pages/my/my",
     "pages/all/all",
-    "pages/my-active/my-active",
+    
     "pages/create/create"
  
     
@@ -34,10 +34,10 @@
       "selectedIconPath": "image/create.png",
       "text": "创建活动"
     }, {
-      "pagePath": "pages/my-active/my-active",
+      "pagePath": "pages/my/my",
       "iconPath": "image/icon_API.png",
       "selectedIconPath": "image/icon_API_HL.png",
-      "text": "我参加的活动"
+      "text": "我"
     }]
   },
   "networkTimeout": {
