@@ -1,7 +1,10 @@
+var data = require('data.js');
+console.log(data);
 var order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
   data: {
     toView: 'red',
+    list:data.list,
     scrollTop: 100
   },
   upper: function(e) {
@@ -27,5 +30,13 @@ Page({
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })
+  },
+  create:function(){
+    wx.navigateTo({
+      url: '/pages/create/create?id=1'
+    });
+  },
+  onload:function(options){
+    console.log('options',options);
   }
 })

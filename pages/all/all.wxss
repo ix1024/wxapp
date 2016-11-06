@@ -13,3 +13,88 @@
   width: 100%;
   height: 180px;
 }
+
+.list-box{
+  margin-top: 10px;
+}
+.list-item{
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.list-item::last{
+  border:none;
+}
+.list-avatar{
+  float: left;
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.list-name{
+  height: 30px;
+  line-height: 30px;
+}
+.list-des{
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.list-image{
+  margin-top: 10px;
+  margin-right: 5px;
+  width:100px;
+  height: 100px;
+}
+.list-address,.list-time{
+  min-height: 20px;
+  line-height: 16px; 
+}
+
+.list-address{
+  color: #999;
+}
+.list-time{
+  color: #999;
+  margin-top: 5px;
+}
+
+.section-title{
+  padding:5px;
+  font-size: 14px;
+  border-left:5px solid #ffa404;
+}
+
+.list-icon{
+  float: left;
+  margin-top: 3px;
+  width:15px;
+  height: 15px; 
+}
+.list-icon-text{
+  margin-left: 20px;
+}
+
+.list-type{
+  position: absolute;
+  right:0;
+  top:10px;
+  background: #eee;
+  padding:5px;
+  border-top-left-radius: 2px;
+   border-bottom-left-radius: 2px;
+}
+.list-type-money{
+  background: #ffa404;
+  color:#fff;
+}
+.list-botton{
+  padding:10px;
+  text-align: right;
+}
+
+.list-bottom-icon{
+  width:20px;
+  height:20px;
+}
