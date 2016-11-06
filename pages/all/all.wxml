@@ -1,0 +1,14 @@
+<view class="section section_gap">
+  <view class="section__title">horizontal scroll</view>
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view id="green" class="scroll-view-item_H bc_green">
+        <image class="scroll-view-item-img" src="/image/001.jpg"></image>
+    </view>
+    <view id="red"  class="scroll-view-item_H bc_red">
+        <image class="scroll-view-item-img" src="/image/002.jpg"></image>
+    </view>
+    <view id="yellow" class="scroll-view-item_H bc_yellow">
+        <image class="scroll-view-item-img" src="/image/003.jpg"></image>
+    </view>
+  </scroll-view>
+</view>
