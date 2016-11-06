@@ -6,7 +6,13 @@ Page({
         console.log(e);
        this.setData({
         startDate: e.detail.value
-        })
+        });
+    },
+    bindEndTimeChange:function(e){
+          console.log(e);
+       this.setData({
+        endDate: e.detail.value
+        });
     },
     goToBack:function(){
         console.log('------------navigateBack');

@@ -1,9 +1,9 @@
 
 {
   "pages": [
-    "pages/my/my",
-    "pages/all/all",
     
+    "pages/all/all",
+    "pages/my/my",
     "pages/create/create"
  
     

@@ -1,22 +1,32 @@
 <view class="container bg">
 <form class="white">
-
     <view>
     <image class="jc-img" src="/image/003.jpg"></image>
     </view>
-    {{message}}
-    <view class="section white block-1">
+    <view class="section white block-1 m-t-10">
     <view class="section-item">
     <image class="icon vm" src="/image/theme.png"></image>
     <input class="section-input" type="text" value="" placeholder="活动主题" value="老同学聚餐" autofocus></input>
     </view>
     <view class="section-item">
-    <image class="icon vm" src="/image/time.png"></image>
-    <input class="section-input" type="text" value="" placeholder="开始时间"></input>
+    <picker mode="date" value="{{startDate}}" start="" end="" bindchange="bindStartTimeChange">
+        <view class="picker">
+        <image class="icon vm" src="/image/time.png"></image>
+        <text class="vm">开始时间:</text><text class="vm m-l-10">{{startDate}}</text>
+        </view>
+    </picker>
+    
+    <!--<input class="section-input" type="text" value="" placeholder="开始时间"></input>-->
     </view>
     <view class="section-item">
-    <image class="icon vm" src="/image/time.png"></image>
-    <input class="section-input" type="text" value="" placeholder="结束时间"></input>
+    <picker mode="date" value="{{endDate}}" start="" end="" bindchange="bindEndTimeChange">
+        <view class="picker">
+        <image class="icon vm" src="/image/time.png"></image>
+        <text class="vm">结束时间:</text><text class="vm m-l-10">{{endDate}}</text>
+        </view>
+    </picker>
+    <!--<image class="icon vm" src="/image/time.png"></image>-->
+    <!--<input class="section-input" type="text" value="" placeholder="结束时间"></input>-->
     </view>
     <view class="section-item">
     <image class="icon vm" src="/image/address.png"></image>
@@ -40,22 +50,11 @@
     </view>
     <view class="block m-t-10 text white">
     <view>
-    亲爱的同学：
-    </view>
     
-    <view class="section">
-    <view class="section__title">时间选择器</view>
-    <picker mode="date" value="{{startDate}}" start="" end="" bindchange="bindStartTimeChange">
-        <view class="picker">
-        当前选择: {{startDate}}
-        </view>
-    </picker>
     </view>
 
-    <view>同窗三载，温馨如昨，悲欢岁月，依稀如梦。 </view>
-    <view>但我们相信：无论你事业辉煌，还是暂时失意;无论你身居要职，还是闲游桃源;同窗之情不变。</view>
-    <view>往事如烟，多少回梦里相聚。我们想约你，约你重续昨日旧梦，听听久违的声音，看看熟悉的面孔，诉诉离别的思绪。让你我抛开尘世的喧嚣、摆脱身边的烦恼，让心栖息，忘却忧愁;说说心里话，聊聊同学情。</view>
-    <view>在二月，这个热闹喜悦的冬日，我们约定在母校相会，希望你能来重温那段甜美而浪漫的回忆。</view>
+    <textarea value="亲爱的同学：同窗三载，温馨如昨，悲欢岁月，依稀如梦。同窗三载，温馨如昨，悲欢岁月，依稀如梦。但我们相信：无论你事业辉煌，还是暂时失意;无论你身居要职，还是闲游桃源;同窗之情不变。往事如烟，多少回梦里相聚。我们想约你，约你重续昨日旧梦，听听久违的声音，看看熟悉的面孔，诉诉离别的思绪。让你我抛开尘世的喧嚣、摆脱身边的烦恼，让心栖息，忘却忧愁;说说心里话，聊聊同学情。在二月，这个热闹喜悦的冬日，我们约定在母校相会，希望你能来重温那段甜美而浪漫的回忆。"></textarea>
+ 
     </view>
 
     

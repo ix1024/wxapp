@@ -38,5 +38,5 @@
     width: 20pt;
     height: 20pt;
     margin-top: 8pt;
-    margin-right: 10px;
+    margin-right: 5px;
 }
