@@ -1,10 +1,11 @@
 module.exports={
     list:[{
+        id:"001",
         name:'步惊去',
-        avatar:'/image/avatar1.jpg',
+        avatar:'http://img.huizecdn.com/test/avatar1.jpg',
         type:'免费',
         des:'清华大学50周年同学聚会，开始报名啦！',
-        images:['/image/a1.jpg','/image/b1.jpg','/image/b2.jpg'],
+        images:['http://img.huizecdn.com/test/a1.jpg','http://img.huizecdn.com/test/b1.jpg','http://img.huizecdn.com/test/b2.jpg'],
         
         time:'2016-11-01',
         startTime:'2016-11-01',
@@ -13,12 +14,12 @@ module.exports={
         num:'20',
         like:'12'
     },{
+        id:"002",
         name:'唐僧',
-        avatar:'/image/avatar2.jpg',
+        avatar:'http://img.huizecdn.com/test/avatar2.jpg',
         type:'￥130.00',
         des:'南山地区练习瑜伽',
-        images:['/image/a2.jpg','/image/b3.jpg'],
-        
+        images:['http://img.huizecdn.com/test/a2.jpg','http://img.huizecdn.com/test/b3.jpg'],        
         time:'2016-11-01',
         startTime:'2016-11-01',
         endTime:'2016-12-10',
@@ -27,12 +28,12 @@ module.exports={
         like:'12'
     }
     ,{
+        id:"003",
         name:'秦时明月',
-        avatar:'/image/avatar3.jpg',
+        avatar:'http://img.huizecdn.com/test/avatar3.jpg',
         type:'￥50.00',
         des:'鹏程第一峰-深圳海拔第一高峰',
-        images:['/image/avatar3.jpg','/image/a3.jpg','/image/a4.jpg'],
-        
+        images:['http://img.huizecdn.com/test/avatar3.jpg','http://img.huizecdn.com/test/a3.jpg','http://img.huizecdn.com/test/a4.jpg'],        
         time:'2016-11-01',
         startTime:'2016-11-01',
         endTime:'2016-12-10',

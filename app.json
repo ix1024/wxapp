@@ -1,15 +1,14 @@
-
 {
   "pages": [
-    
+
     "pages/all/all",
+    "pages/detial/detial",
     "pages/my/my",
-    "pages/create/create"
- 
-    
-     
-    
-    
+    "pages/create/create",
+    "pages/create/tpl"
+
+
+
   ],
   "window": {
     "navigationBarTextStyle": "#fff",
@@ -27,9 +26,8 @@
       "iconPath": "image/icon_component.png",
       "selectedIconPath": "image/icon_component_HL.png",
       "text": "所有活动"
-    },
-    {
-      "pagePath": "pages/create/create",
+    }, {
+      "pagePath": "pages/create/tpl",
       "iconPath": "image/create_gray.png",
       "selectedIconPath": "image/create.png",
       "text": "创建活动"

@@ -1,10 +1,10 @@
-var data = require('data.js');
+var data = require('../../data/data.js');
 console.log(data);
 var order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
   data: {
     toView: 'red',
-    list:data.list,
+    list: data.list,
     scrollTop: 100
   },
   upper: function(e) {
@@ -31,12 +31,17 @@ Page({
       scrollTop: this.data.scrollTop + 10
     })
   },
-  create:function(){
+  detial: function(e) {
     wx.navigateTo({
-      url: '/pages/create/create?id=1'
+      url: '/pages/detial/detial?id=' + e.target.dataset.id
     });
   },
-  onload:function(options){
-    console.log('options',options);
+  create: function() {
+    wx.navigateTo({
+      url: '/pages/create/tpl?id=1'
+    });
+  },
+  onload: function(options) {
+    console.log('options', options);
   }
 })

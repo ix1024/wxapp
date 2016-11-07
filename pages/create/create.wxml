@@ -1,66 +1,89 @@
 <view class="container bg">
-<form class="white">
+<form bindsubmit="formSubmit" bindreset="formReset">
     <view>
-    <image class="jc-img" src="/image/003.jpg"></image>
+        <image class="jc-img" src="{{imageUrl}}"></image>
+        <view class="hide"><input value="{{imageUrl}}" disabled="true" name="image"></input></view>
     </view>
-    <view class="section white block-1 m-t-10">
-    <view class="section-item">
-    <image class="icon vm" src="/image/theme.png"></image>
-    <input class="section-input" type="text" value="" placeholder="活动主题" value="老同学聚餐" autofocus></input>
-    </view>
-    <view class="section-item">
-    <picker mode="date" value="{{startDate}}" start="" end="" bindchange="bindStartTimeChange">
-        <view class="picker">
-        <image class="icon vm" src="/image/time.png"></image>
-        <text class="vm">开始时间:</text><text class="vm m-l-10">{{startDate}}</text>
+    <view class="section">
+        <view class="menu">
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/theme.png"></image>
+                    <view class="menu-text">
+                        <input class="section-input input" type="text" value="" placeholder="活动主题" value="{{theme}}" autofocus name="theme"></input>
+                    </view>
+            </view>
+
+            <view class="menu-item">
+                <picker mode="date" value="{{startDate}}" start="" end="" bindchange="bindStartTimeChange">
+                    <view class="picker">
+                    <image class="menu-icon" src="/image/time.png"></image>
+                    <view class="menu-text">
+                        <text class="vm">开始时间</text><text class="vm m-l-10" >{{startDate}}</text>
+                        <view class="hide"><input value="{{startDate}}" disabled="true" name="startDate"></input></view>    
+                    </view>                
+                    </view>
+                </picker>
+            </view>
+
+            <view class="menu-item">
+                <picker mode="date" value="{{endDate}}" start="" end="" bindchange="bindEndTimeChange">
+                    <view class="picker">
+                    <image class="menu-icon" src="/image/time.png"></image>
+                    <view class="menu-text">
+                        <text class="vm">结束时间</text><text class="vm m-l-10">{{endDate}}</text>
+                        <view class="hide"><input value="{{endDate}}" disabled="true" name="endDate"></input></view>     
+                    </view>                
+                    </view>
+                </picker>
+            </view>
+
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/address.png"></image>
+                <view class="menu-text">
+                    <view class="vm" bindtap="selectMap" data-latitude="{{latitude}}" data-longitude="{{longitude}}">地点{{addressName}}{{latitude}}{{longitude}}</view>
+                    <view class="hide"><input value="{{addressName}}" disabled="true" name="address"></input></view>  
+                </view>
+            </view>
+
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/money.png"></image>
+                <view class="menu-text">
+                    <input type="number" value="{{money}}" name="money" placeholder="费用" />
+                </view>
+            </view>
         </view>
-    </picker>
-    
-    <!--<input class="section-input" type="text" value="" placeholder="开始时间"></input>-->
-    </view>
-    <view class="section-item">
-    <picker mode="date" value="{{endDate}}" start="" end="" bindchange="bindEndTimeChange">
-        <view class="picker">
-        <image class="icon vm" src="/image/time.png"></image>
-        <text class="vm">结束时间:</text><text class="vm m-l-10">{{endDate}}</text>
-        </view>
-    </picker>
-    <!--<image class="icon vm" src="/image/time.png"></image>-->
-    <!--<input class="section-input" type="text" value="" placeholder="结束时间"></input>-->
-    </view>
-    <view class="section-item">
-    <image class="icon vm" src="/image/address.png"></image>
-    <text class="vm">地点</text>
-    </view>
-    <view class="section-item">
-    <image class="icon vm" src="/image/money.png"></image>
-    <text class="vm">费用</text>
-    </view>
-    </view>
-    <view class="block m-t-10 text white">
-    <view class="section-item">
-    <image class="icon vm" src="/image/tel.png"></image>
-    联系电话
-    </view>
-    
-    <view class="section-item">
-    <image class="icon vm" src="/image/secret.png"></image>
-    公开
-    </view>
-    </view>
-    <view class="block m-t-10 text white">
-    <view>
-    
     </view>
 
-    <textarea value="亲爱的同学：同窗三载，温馨如昨，悲欢岁月，依稀如梦。同窗三载，温馨如昨，悲欢岁月，依稀如梦。但我们相信：无论你事业辉煌，还是暂时失意;无论你身居要职，还是闲游桃源;同窗之情不变。往事如烟，多少回梦里相聚。我们想约你，约你重续昨日旧梦，听听久违的声音，看看熟悉的面孔，诉诉离别的思绪。让你我抛开尘世的喧嚣、摆脱身边的烦恼，让心栖息，忘却忧愁;说说心里话，聊聊同学情。在二月，这个热闹喜悦的冬日，我们约定在母校相会，希望你能来重温那段甜美而浪漫的回忆。"></textarea>
- 
+    <view class="section">
+        <view class="menu">
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/tel.png"></image>
+                <view class="menu-text">
+                    <input type="number" class="menu-text" name="tel" value="" placeholder="联系电话" maxlength="11"></input>
+                </view>
+            </view>
+             <view class="menu-item">
+                <image class="menu-icon" src="/image/secret.png"></image>
+                <input class="menu-text" name="secret" disabled value="{{secret}}" bindtap="secret"></input>
+            </view>
+        </view>
     </view>
-
-    
+    <view class="section">
+        <view class="menu">
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/text.png"></image>
+                <view class="menu-text">
+                    <text class="vm">活动描述</text>
+                </view>
+                <view class="m-t-5">
+                    <textarea value="{{text}}" placeholder="说些什么吧"></textarea>
+                </view>
+            </view>            
+        </view>
+    </view>
+    <view class="section">
+        <button class="" type="primary" form-type="submit">提交</button>
+    </view>
 </form>
-<view class="fixed-menu">
-    <text class="btn btn-0" bindtap="goToBack">取消</text>
-    <text class="btn btn-2">完成</text>
-</view>
+
 </view>

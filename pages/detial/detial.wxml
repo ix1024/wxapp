@@ -1,0 +1,69 @@
+<view class="container">
+	<view class="banner">
+		<image class="" src="{{banner}}"></image>
+	</view>
+	<view class="block-area">
+		<view class="title">{{des}}</view>
+		<view class="block-info clearfix">
+			<view class="block-info-left">
+				<text class="color-1 vm">20</text>
+				<text class="vm">报名</text>
+			</view>
+			<view class="block-info-right">
+				<text class="color-1 vm bold">￥2000.00</text>
+				<text class="vm">元</text>
+			</view>
+		</view>
+	</view>
+	<view class="section">
+		<view class="menu-item">
+            <image class="menu-icon" src="/image/time.png"></image>
+            <view class="menu-text">
+            	<text>{{startTime}}——{{endTime}}</text>
+            </view>
+        </view>
+		<view class="menu-item">
+            <image class="menu-icon" src="/image/tel.png"></image>
+            <view class="menu-text" bindtap="tel" data-tel="{{tel}}">
+            	<text data-tel="{{tel}}">{{tel}}</text>
+            </view>
+        </view>
+		<view class="menu-item">
+            <image class="menu-icon" src="/image/address.png"></image>
+            <view class="menu-text">
+            	<text>地址{{longitude}},{{latitude}}</text>
+            </view>
+            <map class="m-t-10" name=""  latitude="{{latitude}}" longitude="{{longitude}}" style="width:100%; height:200px;"></map>
+         </view>
+	</view>
+	<view class="section">
+		<view class="section-title">活动详情</view>
+		<view class="m-t-10 text">
+			　　年年岁岁花相似，岁岁年年人不同，不知不觉已毕业整整二十个年头了。世间有这么一种情感，虽然不能时时相聚，但却能一见如故，这就是同窗之情。
+
+　　二十年风华岁月，弹指一挥间。当年的我们，正值青春年少，风华正茂。如今，我们已是几近不惑，正值人生的中年，正经历着风雨，阅读着沧桑。
+
+　　聚会是那样的令人激动，是那样的开心，昔日的同学虽然多年没见了，但感觉还是那么的熟悉、那么真切、那么自然……
+
+　　大家相见的第一刻，竟是那样地放纵、那样无拘无束地惊喊、打趣戏谑、握手、拥抱……仿佛忘记了自己的年龄，仿佛又回到了二十年前的校园。彼此想说的话太多，有聊不完的前尘往事，有说不尽离情别绪，更有道不完的喜悦与之沧桑。
+
+　　一张张笑脸依然亲切，那一声声呼唤宛如从前。
+
+　　对于参加聚会的同学来说，取得什么成就并不重要，因为每个人都有自身的存在与价值。我们或许没有必要去计较身份与地位的高低、也没有必要去苛求财富的多少，只要珍惜这份来之不易的彼此共处的时光就可以了。
+
+　　时光荏冉，岁月如歌，短短几年的学校生涯，我们不仅收获了学业，更收获了友谊！回首二十载的风风雨雨，我们有太多的感慨，有太多的追忆……
+
+　　尽管岁月的风霜已经悄悄地爬上我们的眼角，满头的青丝已有少许的白发！可岁月的积淀，让我们有着更加丰富的人生色彩，生活的磨砺，让我们有着更加沉稳的人生态度！
+
+　　二十年聚散两茫茫，不思量，自难忘。走上社会，方知校园生活的美好；经过洗礼，才知道惟有同学友情的可贵。
+
+　　往事如烟，温馨如昨，相聚使我们重温起那一同走过的日子，回忆起那段激情燃烧的岁月！历久弥新，永不褪色！……
+
+　　二十年的聚会，是一个句号，也是一种新的开始。不要问我们何时再相逢，也不要说天下没有不散的宴席，我们共同期待着下一次的重逢，期待着年老的时候，还能象此刻一样的“年轻”！
+		</view>
+	</view>
+	<view class="section">
+		<button type="primary" bindtap="join">我要报名</button>
+	</view>
+	
+</view>

@@ -1,52 +1,45 @@
 <view class="container bg">
-    <view class="section section_gap">
     <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
         <view id="red"  class="scroll-view-item_H bc_red">
-            <image class="scroll-view-item-img" src="/image/002.jpg"></image>
+            <image class="scroll-view-item-img" src="http://img.huizecdn.com/test/002.jpg"></image>
         </view>
         <view id="yellow" class="scroll-view-item_H bc_yellow">
-            <image class="scroll-view-item-img" src="/image/003.jpg"></image>
+            <image class="scroll-view-item-img" src="http://img.huizecdn.com/test/003.jpg"></image>
         </view>
     </scroll-view>
-    <view class="block-2 white m-t-10">
+    <view class="section">    
         <view class="section-title">活动列表</view>
-        <view wx:for="{{list}}">
-        <view class="list-box clearfix">
-            <view class="list-item">
-                <view class="list-type  {{item.type !== '免费' ? 'list-type-money': ''}}">
-                {{item.type}}
-                </view>
-                
-                <image class="list-avatar" src="{{item.avatar}}"></image>
-                <view class="list-name">{{item.name}}</view>
-                <view class="list-des">{{item.des}}</view>
-                <image class="list-image"  wx:for="{{item.images}}" wx:for-item="src" src="{{src}}">
-                     
-                </image>
-                <view class="list-time fz-10">
+
+        <view class="list-box clearfix" wx:for="{{list}}">
+
+        <view class="list-item">
+            <view class="list-type  {{item.type !== '免费' ? 'list-type-money': ''}}">
+            {{item.type}}
+            </view>
+            <image class="list-avatar" src="{{item.avatar}}"></image>
+            <view class="list-name">{{item.name}}</view>
+            <view class="list-des">{{item.des}}</view>
+            <image class="list-image"  wx:for="{{item.images}}" wx:for-item="src" src="{{src}}"></image>
+            <view class="list-time fz-10">
                 <image class="list-icon vm" src="/image/time.png"></image>
                 <view class="list-icon-text vm">{{item.time}}</view>
-                </view>
-                <view class="list-address fz-10">
+            </view>
+            <view class="list-address fz-10">
                 <image class="list-icon vm" src="/image/address.png"></image>
                 <view class="list-icon-text vm">{{item.address}}</view>
-                
-                </view>
-                <view class="list-botton">
-                   <text class="vm color-1">{{item.num}}</text>
-                   <text class="vm m-l-5">报名</text>
-                   <image class="list-bottom-icon vm m-l-20" src="/image/like.png"></image>
-                   <text class="vm m-l-5">{{item.like}}</text>
-                </view>
             </view>
-            
+            <view class="list-botton">
+                <text class="vm color-1">{{item.num}}</text>
+                <text class="vm m-l-5">报名</text>
+                <image class="list-bottom-icon vm m-l-20" src="/image/like.png"></image>
+                <text class="vm m-l-5">{{item.like}}</text>
+            </view>
+            <view class="list-layer"  bindtap="detial" data-id="{{item.id}}"></view>
         </view>
-        
+
         </view>
     </view>
-    <view  class="block-2 white m-t-10">
+    <view  class="section">
         <button type="primary" bindtap="create">创建活动</button>
     </view>
-    
-    </view>
-</view>
+ </view>

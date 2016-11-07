@@ -3,7 +3,7 @@ Page({
     data:{
         userInfo:{},
         userName:'kingwell',
-        signature:'心若没有归属，走到发里都是流浪。'
+        signature:'心若没有归属感，走到发里都是流浪。'
     },
     onLoad:function(){
         wx.setNavigationBarTitle({

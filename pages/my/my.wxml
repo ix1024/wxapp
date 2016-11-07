@@ -1,5 +1,5 @@
-<view class="container bg">
-    <view class="block-2 white">
+<view class="container">
+    <view class="section">
         <view class="user">
             <view class="user-box clearfix">
                 <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
@@ -25,27 +25,28 @@
             </view>
         </view>
     </view>
-    <view class="block-2 m-t-10 white">
-        <view class="list-box">
-            <view class="list-item">
-                <image class="list-icon vm" src="/image/message.png"></image>
-                <text class="vm">我的消息</text>
+    <view class="section">
+        <view class="menu">
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/message.png"></image>
+                <text class="menu-text">我的消息</text>
             </view>
-             <view class="list-item list-last-child">
-                <image class="list-icon vm" src="/image/edit.png"></image>
-                <text class="vm">我的活动列表</text>
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/edit.png"></image>
+                <text class="menu-text">我的活动列表</text>
             </view>
-        </view>
+        </view>       
     </view>
-    <view class="block-2 m-t-10 white">
-        <view class="list-box">
-             <view class="list-item">
-                <image class="list-icon vm" src="/image/setting.png"></image>
-                <text class="vm">设置</text>
+    <view class="section">
+        <view class="menu">
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/setting.png"></image>
+                <text class="menu-text">设置</text>
             </view>
-             <view class="list-item list-last-child">
-                <image class="list-icon vm" src="/image/about.png"></image>
-                <text class="vm">关于</text>
+            <view class="menu-item">
+                <image class="menu-icon" src="/image/about.png"></image>
+                <text class="menu-text">关于</text>
             </view>
-        </view>
+        </view>       
+    </view>    
 </view>
