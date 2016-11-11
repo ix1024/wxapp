@@ -39,7 +39,7 @@
             
             <view class="menu-item">
                 <image class="menu-icon" src="/image/number.png"></image>
-                <input class="menu-text" type="number" name="total" value="{{total}}" bindtap="number" placeholder="人数" maxlength="4"></input>
+                <input class="menu-text" type="number" name="total" value="" bindtap="number" placeholder="人数" maxlength="4"></input>
             </view>
 
             <view class="menu-item">
@@ -56,13 +56,13 @@
 
             <view class="menu-item">
                 <image class="menu-icon" src="/image/money.png"></image>
-                <input class="menu-text" type="number" value="{{money}}" name="money" placeholder="费用"  maxlength="4"/>
+                <input class="menu-text" type="number" value="" name="money" placeholder="费用"  maxlength="4"/>
             </view>
 
             <view class="menu-item">
                 <image class="menu-icon" src="/image/tel.png"></image>
                 <view class="menu-text">
-                    <input type="number" class="menu-text" name="tel" value="{{tel}}" placeholder="联系电话" maxlength="11"></input>
+                    <input type="number" class="menu-text" name="tel" value="" placeholder="联系电话" maxlength="11"></input>
                 </view>
             </view>
              
@@ -78,7 +78,7 @@
                     <text class="vm">活动描述</text>
                 </view>
                 <view class="m-t-5">
-                    <textarea value="{{text}}" placeholder="说些什么吧" name="description"></textarea>
+                    <input class="menu-text" placeholder="说些什么吧" name="description" ></input>                    
                 </view>
             </view>
             <view class="menu-item">

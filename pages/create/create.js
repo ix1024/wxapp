@@ -2,10 +2,7 @@ var app = getApp();
 var _id = '';
 Page({
     data: {
-        submitStatus: false,
-        money: '',
-        secret: '公开',
-        text: ''
+        submitStatus: false
     },
     bindStartTimeChange: function(e) {
         this.setData({
@@ -67,19 +64,7 @@ Page({
             }
         }
         console.log(status);
-        // this.setData({
-        //     title: '',
-        //     startTime: '',
-        //     endTime: '',
-        //     total: '',
-        //     addressName: '',
-        //     latitude: '',
-        //     longitude: '',
-        //     money: '',
-        //     tel: '',
-        //     text: '',
-        //     images: ''
-        // });
+
         if (status) {
             app.getUserInfo(function(userInfo) {
                 submitObject.avatarUrl = userInfo.avatarUrl;
@@ -95,6 +80,20 @@ Page({
                             title: '成功',
                             icon: 'success',
                             duration: 2000
+                        });
+                        _this.setData({
+                            name: '',
+                            title: '',
+                            startTime: '',
+                            endTime: '',
+                            total: '',
+                            addressName: '',
+                            latitude: '',
+                            longitude: '',
+                            money: '',
+                            tel: '',
+                            text: '',
+                            images: ''
                         });
                         wx.request({
                             url: app.globalData.domain + 'api/wxapp/update-tpl-num/' + _id,
