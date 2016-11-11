@@ -1,16 +1,26 @@
-var data = require('../../data/data.js');
-console.log(data);
+var app = getApp();
 var setTitle = function() {
 	wx.setNavigationBarTitle({
 		title: '查看详情'
 	});
 };
-setTitle();
-console.log(data.tplBanner['002']);
+var setStatus = function(status) {
+
+	if (status) {
+		this.setData({
+			baoMin: 'hide',
+			baoMinChengGong: ''
+		});
+	} else {
+		this.setData({
+			baoMin: '',
+			baoMinChengGong: 'hide'
+		});
+	}
+};
 Page({
 	data: {
-
-		banner: data.tplBanner['002']
+		disabled: true
 	},
 	onShow: function() {
 		setTitle();
@@ -25,30 +35,82 @@ Page({
 			phoneNumber: phoneNumber
 		});
 	},
-	join: function() {
-		wx.showToast({
-			title: '报名成功',
-			icon: 'success',
-			duration: 2000
+	join: function(e) {
+		var id = e.target.dataset.id;
+
+		console.log(id);
+		var _this = this;
+		//调用应用实例的方法获取全局数据
+		app.getUserInfo(function(userInfo) {
+			console.log(userInfo);
+			wx.request({
+				url: app.globalData.domain + 'api/wxapp/baomin/' + id,
+				data: {
+					nickName: userInfo.nickName,
+					avatarUrl: userInfo.avatarUrl,
+					time: app.globalData.getTime()
+				},
+				method: 'GET',
+				success: function(res) {
+					setStatus.call(_this, true);
+					wx.showToast({
+						title: '报名成功',
+						icon: 'success',
+						duration: 2000
+					});
+				},
+				fail: function() {},
+				complete: function() {}
+			});
 		});
 	},
 	onLoad: function(options) {
+
 		var _this = this;
-		var dataObj = {
-			des: '同学聚会',
-			banner: data.tplBanner[options.id]
-		};
-		data.list.forEach(function(item, index) {
-			if (item.id === options.id) {
-				for (var key in item) {
-					dataObj[key] = item[key];
-				}
+		wx.request({
+			url: app.globalData.domain + 'api/wxapp/get/' + options.id,
+			data: {
+				time: app.globalData.getTime()
+			},
+			method: 'GET',
+			success: function(res) {
+				_this.setData(res.data);
 			}
 		});
-		console.log(dataObj);
-		console.log(555555555555555, options);
+		//avatarUrl
+		wx.request({
+			url: app.globalData.domain + 'api/wxapp/activity-user/' + options.id,
+			data: {
+				time: app.globalData.getTime()
+			},
+			method: 'GET',
+			success: function(res) {
 
-		_this.setData(dataObj);
+				_this.setData({
+					users: res.data
+				});
+			}
+		});
+
+		app.getUserInfo(function(userInfo) {
+			wx.request({
+				url: app.globalData.domain + 'api/wxapp/activity-user/' + options.id,
+				data: {
+					time: app.globalData.getTime()
+				},
+				success: function(res) {
+					if (res && res.data && res.data.length) {
+						res.data.forEach(function(item) {
+							if (item.name === userInfo.nickName) {
+								setStatus.call(_this, true);
+							}
+						});
+					}
+				}
+			});
+		});
+
+		setStatus.call(_this, false);
 		setTitle();
 	}
 });

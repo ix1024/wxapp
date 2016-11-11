@@ -13,7 +13,9 @@ body {
   overflow: hidden;
   display: table;
 }
-
+.tac{
+  text-align: center;
+}
 .bg {
   background: #ececec;
 }
@@ -34,12 +36,21 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 40pt;
+  width: 100%;  
   background: #fff;
   border-top: 1px solid #fafafa;
-  padding: 2pt;
+  padding: 20rpx;
   z-index: 1000;
+
+}
+
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
 }
 
 .bold {
@@ -146,7 +157,7 @@ body {
 
 /*区域*/
 .section {
-  margin-top: 15rpx;
+  margin: 15rpx 0;
   background: #fff;
   padding: 25rpx 30rpx;
 }
@@ -155,6 +166,10 @@ body {
   padding: 5px;
   font-size: 14px;
   border-left: 5px solid #ffa404;
+}
+
+.gray {
+  color: #999;
 }
 
 /*list*/
@@ -191,4 +206,103 @@ body {
   vertical-align: middle;
   font-size: 35rpx;
   line-height: 50rpx;
+}
+
+/*list*/
+.list-box {
+  margin-top: 10px;
+}
+
+.list-item {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.list-item::last {
+  border: none;
+}
+
+.list-avatar {
+  float: left;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.list-name {
+  height: 30px;
+  line-height: 30px;
+}
+
+.list-des {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.list-image {
+  margin-top: 10px;
+  margin-right: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.list-address,
+.list-time {
+  min-height: 20px;
+  line-height: 16px;
+}
+
+.list-address {
+  color: #999;
+}
+
+.list-time {
+  color: #999;
+  margin-top: 5px;
+}
+
+.section-title {
+  padding: 5px;
+  font-size: 14px;
+  border-left: 5px solid #ffa404;
+}
+
+.list-icon {
+  float: left;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.list-icon-text {
+  margin-left: 20px;
+}
+
+.list-type {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  background: #eee;
+  padding: 5px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.list-type-money {
+  background: #ffa404;
+  color: #fff;
+}
+
+.list-botton {
+  margin-top: 15rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: right;
+}
+
+.list-bottom-icon {
+  width: 20px;
+  height: 20px;
 }

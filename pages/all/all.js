@@ -1,47 +1,54 @@
-var data = require('../../data/data.js');
-console.log(data);
-var order = ['red', 'yellow', 'blue', 'green', 'red']
-Page({
-  data: {
-    toView: 'red',
-    list: data.list,
-    scrollTop: 100
-  },
-  upper: function(e) {
-    console.log(e)
-  },
-  lower: function(e) {
-    console.log(e)
-  },
-  scroll: function(e) {
-    console.log(e)
-  },
-  tap: function(e) {
-    for (var i = 0; i < order.length; ++i) {
-      if (order[i] === this.data.toView) {
-        this.setData({
-          toView: order[i + 1]
-        })
-        break
-      }
-    }
-  },
-  tapMove: function(e) {
-    this.setData({
-      scrollTop: this.data.scrollTop + 10
-    })
-  },
-  detial: function(e) {
-    wx.navigateTo({
-      url: '/pages/detial/detial?id=' + e.target.dataset.id
-    });
-  },
-  create: function() {
-    wx.navigateTo({
-      url: '/pages/create/tpl?id=1'
-    });
-  },
-  onload: function(options) {
-    console.log('options', options);
-  }
-})
+ var app = getApp();
+
+ var getList = function() {
+   var _this = this;
+   wx.request({
+     url: app.globalData.domain + 'api/wxapp/get/',
+     data: {
+       time: app.globalData.getTime()
+     },
+     method: 'GET',
+     success: function(res) {
+       _this.setData({
+         allActivity: res.data
+       });
+     }
+   });
+ };
+ Page({
+   data: {
+     scrollTop: 100
+   },
+   upper: function(e) {},
+   lower: function(e) {},
+   scroll: function(e) {},
+   tap: function(e) {},
+   tapMove: function(e) {
+     this.setData({
+       scrollTop: this.data.scrollTop + 10
+     })
+   },
+   detial: function(e) {
+     var id = e.target.dataset.id;
+     if (!id) {
+       return;
+     }
+     wx.navigateTo({
+       url: '/pages/detial/detial?id=' + id
+     });
+   },
+   onPullDownRefresh: function() {
+     getList.call(this);
+   },
+   onShow: function() {
+     getList.call(this);
+     app.login(function(res) {
+       console.log(res);
+     });
+   },
+   onReady: function() {},
+   onLoad: function() {
+     getList.call(this);
+
+   }
+ });

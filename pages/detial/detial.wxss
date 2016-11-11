@@ -28,3 +28,31 @@
 	width: 50%;
 	text-align: right;
 }
+
+.section-title {
+	border-bottom: 1px solid #eee;
+	border-left: none;
+}
+
+.menu-text {
+	font-size: 30rpx;
+	color: #555;
+}
+
+.text {
+	color: #555;
+	line-height: 2;
+}
+
+.detial-image {
+	display: block;
+	margin: 10rpx;
+}
+
+.member-image {
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 50%;
+	margin: 10rpx;
+	vertical-align: top;
+}

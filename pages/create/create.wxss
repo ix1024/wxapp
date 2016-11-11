@@ -8,6 +8,7 @@
      
 }
 .section-item{
+    
     border-bottom: 1px solid #eee;
     height: 35pt;
     line-height: 35pt;
@@ -17,7 +18,7 @@
 }
 
 .section-input{
-    height: 100%;
+    display: block;
     line-height: 1;
 }
 .block{
@@ -39,4 +40,21 @@
     height: 20pt;
     margin-top: 8pt;
     margin-right: 5px;
+}
+.menu-text{
+    color:#666;
+   
+    vertical-align: middle;
+}
+.icon-postion{
+    position: absolute;
+    width:40rpx;
+    height:40rpx;
+    right: 0;
+    top:32rpx;
+    z-index: 10;
+    background: #fff;
+}
+.menu-item{
+    position: relative;
 }
