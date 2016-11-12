@@ -22,12 +22,16 @@ Page({
 	data: {
 		disabled: true
 	},
+	onLaunch:function(){
+		wx.showNavigationBarLoading();
+	},
 	onShow: function() {
 		setTitle();
+		
 	},
 	tel: function(e) {
 		var phoneNumber = e.target.dataset.tel;
-		console.log(phoneNumber);
+		
 		if (!phoneNumber) {
 			return;
 		}
@@ -38,7 +42,7 @@ Page({
 	join: function(e) {
 		var id = e.target.dataset.id;
 
-		console.log(id);
+		
 		var _this = this;
 		//调用应用实例的方法获取全局数据
 		app.getUserInfo(function(userInfo) {
@@ -67,6 +71,7 @@ Page({
 	onLoad: function(options) {
 
 		var _this = this;
+
 		wx.request({
 			url: app.globalData.domain + 'api/wxapp/get/' + options.id,
 			data: {
@@ -75,6 +80,7 @@ Page({
 			method: 'GET',
 			success: function(res) {
 				_this.setData(res.data);
+				wx.hideNavigationBarLoading();
 			}
 		});
 		//avatarUrl
@@ -89,6 +95,7 @@ Page({
 				_this.setData({
 					users: res.data
 				});
+				
 			}
 		});
 

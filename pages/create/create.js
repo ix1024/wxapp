@@ -28,8 +28,7 @@ Page({
         var _this = this;
         var latitude = e.target.dataset.latitude || '';
         var longitude = e.target.dataset.longitude || '';
-        console.log(latitude)
-        console.log(longitude)
+
         wx.openLocation({
             latitude: latitude,
             longitude: longitude,
@@ -66,35 +65,45 @@ Page({
         console.log(status);
 
         if (status) {
+            wx.showToast({
+                title: '正在提交数据...',
+                icon: 'loading',
+                duration: 10000
+            });
             app.getUserInfo(function(userInfo) {
                 submitObject.avatarUrl = userInfo.avatarUrl;
                 submitObject.nickName = userInfo.nickName;
                 console.log(submitObject);
-
                 wx.request({
                     url: app.globalData.domain + 'api/wxapp/add',
                     data: submitObject,
                     success: function(res) {
-                        console.log(res.data);
+
+                        wx.hideToast();
                         wx.showToast({
                             title: '成功',
                             icon: 'success',
-                            duration: 2000
+                            duration: 2000,
+                            complete: function() {
+                                wx.navigateTo({
+                                    url: '/pages/all/all'
+                                });
+                            }
                         });
-                        _this.setData({
-                            name: '',
-                            title: '',
-                            startTime: '',
-                            endTime: '',
-                            total: '',
-                            addressName: '',
-                            latitude: '',
-                            longitude: '',
-                            money: '',
-                            tel: '',
-                            text: '',
-                            images: ''
-                        });
+                        // _this.setData({
+                        //     name: '',
+                        //     title: '',
+                        //     startTime: '',
+                        //     endTime: '',
+                        //     total: '',
+                        //     addressName: '',
+                        //     latitude: '',
+                        //     longitude: '',
+                        //     money: '',
+                        //     tel: '',
+                        //     text: '',
+                        //     images: ''
+                        // });
                         wx.request({
                             url: app.globalData.domain + 'api/wxapp/update-tpl-num/' + _id,
                             success: function(res) {
@@ -121,7 +130,7 @@ Page({
 
     },
     onLoad: function(option) {
-        console.log('query', option);
+
         _id = option._id;
 
         this.setData({

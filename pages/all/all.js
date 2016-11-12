@@ -12,6 +12,7 @@
        _this.setData({
          allActivity: res.data
        });
+        wx.hideNavigationBarLoading();
      }
    });
  };
@@ -40,15 +41,22 @@
    onPullDownRefresh: function() {
      getList.call(this);
    },
+   onLaunch:function(){
+    
+   },
    onShow: function() {
      getList.call(this);
      app.login(function(res) {
        console.log(res);
      });
+     wx.showNavigationBarLoading();
    },
-   onReady: function() {},
+   onReady: function() {
+    
+    
+   },
    onLoad: function() {
      getList.call(this);
-
+    
    }
  });
